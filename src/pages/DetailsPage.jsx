@@ -434,7 +434,6 @@ export default function DetailsPage() {
               </>
             )}
           </div>
-          {/* <Footer /> */}
         </>
       )}
     </div>

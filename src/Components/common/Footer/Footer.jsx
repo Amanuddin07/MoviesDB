@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import "./footer.css";
-import logo from "../../../assets/logo.png";
+import logo from "../../../../public/logo.png";
 import { NavLink } from "react-router-dom";
 
 export default function Footer() {

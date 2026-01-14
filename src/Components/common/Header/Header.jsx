@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../Header/header.css";
-import logo from "../../../assets/logo.png";
+import logo from "../../../../public/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, NavLink, useNavigate } from "react-router-dom";

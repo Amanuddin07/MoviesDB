@@ -1,16 +1,50 @@
-# React + Vite
+# MoviesDB
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MoviesDB is a modern, single-page movie and TV show discovery application built with React and TMDB API. The project focuses on performance, clean UI, and real-world application patterns.
 
-Currently, two official plugins are available:
+# Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+. Browse Movies & TV Shows with detailed information pages
 
-## React Compiler
+. Search functionality with instant results
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+. Detailed pages including:
 
-## Expanding the ESLint configuration
+. Overview, genres, release year
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+. Runtime, budget, revenue (formatted)
+
+. Cast and crew
+
+. Streaming platforms
+
+. Images, trailers, and videos
+
+. Recommendations
+
+# Watchlist system
+
+. Add/remove movies or TV shows
+
+. Persistent storage using localStorage
+
+. Visual bookmark indicator
+
+. Custom alert notifications
+
+# Responsive UI
+
+. Image sliders, cast sliders, video sliders
+
+. Lazy-loaded images for performance
+
+# Client-side routing
+
+. Works reliably on refresh and new tabs using HashRouter
+
+. Clean architecture
+
+. Reusable custom hooks (useTMDB, useTrailer, useCredit, etc.)
+
+. Modular components (MovieCard, DetailsPage, sliders)
+

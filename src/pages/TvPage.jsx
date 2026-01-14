@@ -5,6 +5,8 @@ import Loading from "../Components/ui/Loading";
 import MovieCard from "../Components/common/MovieCard";
 
 export default function TvPage() {
+  const PAGE_TITLE = "Tv Shows";
+
   const [page, setPage] = useState(1);
   const [allMovies, setAllMovies] = useState([]);
 
@@ -14,6 +16,11 @@ export default function TvPage() {
 
   const loadRef = useRef(null);
   const isFetching = useRef(false);
+
+  /* Set page title */
+  useEffect(() => {
+    document.title = PAGE_TITLE;
+  }, []);
 
   /* Append movies safely */
   useEffect(() => {
@@ -51,7 +58,7 @@ export default function TvPage() {
 
   return (
     <div className="homePage d-flex flex-column align-items-center">
-      <h1 className="my-2">TV Shows</h1>
+      <h1 className="my-2">{PAGE_TITLE}</h1>
 
       <div className="container moviesList">
         {allMovies.map(movie => (

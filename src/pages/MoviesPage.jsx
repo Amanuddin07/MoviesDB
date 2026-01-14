@@ -5,6 +5,8 @@ import Loading from "../Components/ui/Loading";
 import useTMDB from "../Hooks/useTMDB";
 
 export default function MoviesPage() {
+  const PAGE_TITLE = "Movies";
+
   const [page, setPage] = useState(1);
   const [allMovies, setAllMovies] = useState([]);
 
@@ -14,6 +16,11 @@ export default function MoviesPage() {
 
   const loadRef = useRef(null);
   const isFetching = useRef(false);
+
+  /* Set page title */
+  useEffect(() => {
+    document.title = PAGE_TITLE;
+  }, []);
 
   /* Append movies safely */
   useEffect(() => {

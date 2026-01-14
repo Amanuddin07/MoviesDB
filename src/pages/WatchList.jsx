@@ -1,16 +1,23 @@
 import { useParams } from "react-router-dom";
 import MovieCard from "../Components/common/MovieCard";
 import useWatchList from "../Hooks/useWatchList";
+import { useEffect } from "react";
 
 export default function WatchList() {
+  const PAGE_TITLE = "Watchlist";
+
   const { watchList } = useWatchList();
   const movies = Object.values(watchList);
 
   const { media_type } = useParams();
 
+  useEffect(() => {
+    document.title = PAGE_TITLE;
+  },[])
+
   return (
     <div className="homePage d-flex flex-column align-items-center">
-      <h1 className="my-2">Watchlist</h1>
+      <h1 className="my-2">{PAGE_TITLE}</h1>
 
       <div className="container moviesList">
         {movies.length > 0 ? (

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import "./ImageSlider.css";
+import "./imageSlider.css";
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 

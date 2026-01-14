@@ -1,0 +1,30 @@
+.video-card-loader {
+  min-width: 360px;
+  height: 200px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.video-card-loader .shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #1a1a1a 25%,
+    #2a2a2a 37%,
+    #1a1a1a 63%
+  );
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

@@ -1,0 +1,147 @@
+@media screen and (min-width: 1200px) {
+    .movieCard{
+        width: 230px !important;
+    }
+}
+@media screen and (max-width: 998px) {
+    .movieCard{
+        width: 190px !important;
+    }
+    .details_container{
+        flex-direction: column;
+    }
+    .background_img{
+        min-height: 110vh;
+    }
+    .trailer_window{
+        height: 500px !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .background_img{
+        min-height: 90vh;
+    }
+    .cast_card{
+        min-width: 140px !important;
+    }
+    .cast_img{
+        height: 210px !important;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .header{
+        padding: .9rem .5rem !important;
+    }
+
+    .background_img{
+        min-height: 120vh;
+    }
+    
+    .movieCard{
+        width: 155px !important;
+    }
+    .movieCard_details h5{
+        font-size: .9rem !important;
+    }
+    .movieCard_details p{
+        font-size: .6rem ;
+    }
+    .cast_slider,.rec_slider,.video_nav{
+        padding: 1rem 10px !important;
+    }
+    .cast_arrow_btn,.slider_btn,.video_nav{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    
+    .background_img{
+        min-height: 140vh;
+    }
+    .poster-left{
+        margin: auto;
+    }
+
+    .trailer_window{
+        height: 400px !important;
+    }
+
+    .cast_card{
+        min-width: 130px !important;
+    }
+    .cast_img{
+        height: 180px !important;
+    }
+}
+
+
+@media screen and (max-width: 490px) {
+    .poster_img{
+        width: 270px;
+    }
+    .SeasonCard{
+        width: 165px !important;
+    }
+    .season{
+        gap: 1rem !important;
+    }
+    .season_container{
+        padding: 1rem !important;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .background_img{
+        min-height: 150vh;
+    }
+
+    .poster_img{
+        width: 250px;
+    }
+    
+    .SeasonCard{
+        width: 145px !important;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 390px) {
+    .video-card{
+        min-width: 90% !important;
+    }
+}
+
+
+@media screen and (max-width: 376px) {
+    .details_container{
+        padding: 100px .5rem 2rem 1rem !important;
+    }
+    .genre{
+        font-size: 14px;
+    }
+    .background_img{
+        min-height: 185vh;
+    }
+    .poster_img{
+        max-width: 95% !important;
+    }
+    .movieCard{
+        width: 135px !important;
+    }
+    .networks{
+        max-width: 95% !important;
+    }
+
+    .trailer_window {
+        width: 90%;
+    }
+
+    .SeasonCard{
+        width: 135px !important;
+    }
+}

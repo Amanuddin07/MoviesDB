@@ -1,0 +1,141 @@
+.header{
+    /* background: rgba(255, 255, 255, 0.31); */
+    border-radius: 100px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.5px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 1rem .5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.logo{
+    width: 50px;
+    background-size: cover;
+}
+
+.header nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header nav ul{
+    margin: 0;
+    list-style: none;
+}
+.header nav ul li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--Text);
+    transition: .3s linear;
+
+    &:hover{
+        color: var(--Primary-Accent);
+    }
+}
+
+.search{
+    background: rgba(255, 255, 255, 0.31);
+    border-radius: 100px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.5px);
+    -webkit-backdrop-filter: blur(11.5px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.active{
+    color: var(--Primary-Accent) !important;
+}
+
+.burger{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--White);
+}
+
+.slider{
+    width: min(350px,75%);
+    height: 100vh;
+    background: rgba(35, 35, 35, 0.80);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.5px) !important;
+    -webkit-backdrop-filter: blur(11.5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    transform: translateX(380px);
+    transition: .3s ease-in-out;
+}
+
+.slider.active{
+    transform: translateX(0);
+    transition: .3s ease-in-out;
+    backdrop-filter: blur(110.5px) !important;
+
+}
+
+.slider nav{
+    flex-direction: column;
+}
+.slider.active nav{
+    flex-direction: column;
+    display: flex;
+}
+
+.header_right{
+    display: flex;
+    justify-content: center;
+}
+
+.slider nav ul{
+    padding: 10px 0;
+}
+
+.close{
+    display: flex;
+    justify-content: end;
+    color: var(--White);
+    padding: 16px 6px;
+}
+.clsIcon{
+    cursor: pointer;
+    font-size: 25px !important;
+    color: red;
+}
+
+
+
+@media only screen and (min-width: 769px){
+    .burger{
+        display: none;
+    }
+    .header_right{
+        display: none;
+    }
+}
+@media only screen and (max-width: 768px){
+    .header nav{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 426px){
+    .search-container{
+        width: 200px !important;
+    }
+    .header{
+        padding: 0.6rem 0.3rem !important;
+    }
+    .close{
+        padding: 12px 3px !important;
+    }
+}
+
+    

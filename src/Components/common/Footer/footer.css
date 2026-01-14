@@ -1,0 +1,86 @@
+.site_footer {
+  background-color: var(--Cards);
+  color: var(--Text);
+  width: 100%;
+  position: static;
+  bottom: 0;
+}
+
+/* Footer content layout */
+.footer_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+}
+
+/* Footer bottom bar */
+.footer_bottom {
+  text-align: center;
+  font-size: 14px;
+  padding: 12px;
+  background-color: var(--Background);
+  opacity: 0.85;
+}
+
+/* Typography */
+.footer_brand h4 {
+  margin-bottom: 6px;
+  /* color: var(--Primary-Accent); */
+}
+.footer_brand h4 span{
+  margin-bottom: 6px;
+  color: var(--Primary-Accent);
+}
+
+.footer_brand p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.footer_links h6,
+.footer_social h6 {
+  margin-bottom: 8px;
+  color: var(--Play-Button);
+}
+
+/* Links */
+.footer_links nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_links li {
+  margin-bottom: 6px;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.footer_links li a{
+  color: #fff
+}
+
+.footer_links li:hover {
+  opacity: 1;
+  color: var(--Primary-Accent);
+}
+
+/* Social icons */
+.social_icons {
+  display: flex;
+  gap: 14px;
+  font-size: 22px;
+}
+
+.social_icons a {
+  color: var(--Text);
+  opacity: 0.75;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.social_icons a:hover {
+  opacity: 1;
+  color: var(--Primary-Accent);
+}

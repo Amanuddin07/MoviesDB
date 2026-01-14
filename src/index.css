@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+
+:root{
+    --Background: #0B1220;
+    --Cards: #121A2F;
+    --Primary-Accent: #00c8df;
+    --Secondary-Accent: #7C4DFF;
+    --Text: #EAF0F6;
+    --Rating: #FFD54F;
+    --Play-Button: #00E676;
+    --red: #FF3D00;
+    --White: #FFFFFF;
+}
+
+body{
+    background-color: var(--Background);
+}
+
+/* .app_content{
+    padding-top: 90px;
+} */
+
+
+

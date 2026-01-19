@@ -55,6 +55,7 @@
   background-color: var(--Background);
   width: 100%;
   color: var(--Text);
+  min-height: 160vh;
 }
 
 

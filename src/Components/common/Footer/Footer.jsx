@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <>
       <footer className="site_footer">
-        <div className="footer_container">
+        <div className="footer_container z-99">
           {/* Left */}
           <div className="footer_brand">
             <div className="d-flex align-items-center">

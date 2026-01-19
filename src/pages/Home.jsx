@@ -47,6 +47,7 @@ export default function Home() {
     return () => observer.disconnect();
   }, [loading]);
 
+  /* Full-screen loader only on first load */
   if (loading && page === 1) return <Loading />;
 
   return (
@@ -61,7 +62,8 @@ export default function Home() {
 
       <div ref={loadRef} style={{ height: "1px" }} />
 
-      {loading && <p>Loading more...</p>}
+      {/* Bottom loader for pagination */}
+      {loading && page > 1 && <p>Loading more…</p>}
     </div>
   );
 }

@@ -63,7 +63,6 @@ export default function DetailsPage() {
     error: videosError,
   } = useVideos(media_type, id);
 
-
   const providers =
     provider?.results?.IN?.rent ||
     provider?.results?.IN?.flatrate ||
@@ -77,8 +76,8 @@ export default function DetailsPage() {
     media_type === "movie"
       ? `/movie/${id}`
       : media_type === "tv"
-      ? `/tv/${id}`
-      : null;
+        ? `/tv/${id}`
+        : null;
 
   const { data: movies, loading } = useTMDB(endpoint);
 
@@ -98,6 +97,10 @@ export default function DetailsPage() {
 
     return value.toLocaleString();
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [id, media_type]);
 
   const rating = movies?.vote_average ?? 0;
 

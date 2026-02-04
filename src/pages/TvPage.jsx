@@ -9,9 +9,10 @@ export default function TvPage() {
 
   const [page, setPage] = useState(1);
   const [allMovies, setAllMovies] = useState([]);
+  const firstLoadDone = useRef(false);
 
   const { data: movies, loading } = useTMDB(
-    `${ENDPOINTS.TV.path}?page=${page}`
+    `${ENDPOINTS.TV.path}?page=${page}`,
   );
 
   const loadRef = useRef(null);
@@ -26,14 +27,18 @@ export default function TvPage() {
   useEffect(() => {
     if (!movies?.length) return;
 
-    setAllMovies(prev => {
-      const map = new Map(prev.map(m => [m.id, m]));
-      movies.forEach(m => map.set(m.id, m));
+    setAllMovies((prev) => {
+      const map = new Map(prev.map((m) => [m.id, m]));
+      movies.forEach((m) => map.set(m.id, m));
       return Array.from(map.values());
     });
 
+    if (page === 1) {
+      firstLoadDone.current = true;
+    }
+
     isFetching.current = false;
-  }, [movies]);
+  }, [movies, page]);
 
   /* Infinite scroll */
   useEffect(() => {
@@ -41,12 +46,17 @@ export default function TvPage() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !loading && !isFetching.current) {
+        if (
+          entry.isIntersecting &&
+          firstLoadDone.current &&
+          !loading &&
+          !isFetching.current
+        ) {
           isFetching.current = true;
-          setPage(prev => prev + 1);
+          setPage((prev) => prev + 1);
         }
       },
-      { rootMargin: "200px" }
+      { rootMargin: "200px" },
     );
 
     observer.observe(loadRef.current);
@@ -61,12 +71,8 @@ export default function TvPage() {
       <h1 className="my-2">{PAGE_TITLE}</h1>
 
       <div className="container moviesList">
-        {allMovies.map(movie => (
-          <MovieCard
-            key={movie.id}
-            movie={movie}
-            media_type="tv"
-          />
+        {allMovies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} media_type="tv" />
         ))}
       </div>
 

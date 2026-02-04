@@ -1,3 +1,5 @@
+
+
 .video-card-loader {
   min-width: 360px;
   height: 200px;
@@ -26,5 +28,12 @@
   }
   100% {
     transform: translateX(100%);
+  }
+}
+
+
+@media screen and (max-width: 370px){
+  .loadingcard{
+    width: 45% !important;
   }
 }

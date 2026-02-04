@@ -8,9 +8,10 @@ import MovieCard from "../Components/common/MovieCard";
 export default function Home() {
   const [page, setPage] = useState(1);
   const [allMovies, setAllMovies] = useState([]);
+  const firstLoadDone = useRef(false);
 
   const { data: movies, loading } = useTMDB(
-    `${ENDPOINTS.TRENDING.path}?page=${page}`
+    `${ENDPOINTS.TRENDING.path}?page=${page}`,
   );
 
   const loadRef = useRef(null);
@@ -20,14 +21,18 @@ export default function Home() {
   useEffect(() => {
     if (!movies?.length) return;
 
-    setAllMovies(prev => {
-      const map = new Map(prev.map(m => [m.id, m]));
-      movies.forEach(m => map.set(m.id, m));
+    setAllMovies((prev) => {
+      const map = new Map(prev.map((m) => [m.id, m]));
+      movies.forEach((m) => map.set(m.id, m));
       return Array.from(map.values());
     });
 
+    if (page === 1) {
+      firstLoadDone.current = true;
+    }
+
     isFetching.current = false;
-  }, [movies]);
+  }, [movies, page]);
 
   /* Infinite scroll */
   useEffect(() => {
@@ -35,12 +40,17 @@ export default function Home() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !loading && !isFetching.current) {
+        if (
+          entry.isIntersecting &&
+          firstLoadDone.current &&
+          !loading &&
+          !isFetching.current
+        ) {
           isFetching.current = true;
-          setPage(prev => prev + 1);
+          setPage((prev) => prev + 1);
         }
       },
-      { rootMargin: "200px" }
+      { rootMargin: "200px" },
     );
 
     observer.observe(loadRef.current);
@@ -55,7 +65,7 @@ export default function Home() {
       <h1 className="my-2">Trending Shows</h1>
 
       <div className="container moviesList">
-        {allMovies.map(movie => (
+        {allMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
